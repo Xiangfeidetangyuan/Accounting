@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Menu</title>
+    <style type="text/css">
+            body{
+                 /*设置背景*/
+                {% load static %}
+                background-image: url("{% static "bj.jpg" %}");
+                background-size: 100% 100%;
+                height:100%;
+                margin:100px;
+               padding:100px;
+            }
+        .btns{ width:143px; height:40px;}
+
+
+            </style>
+</head>
+<body>
+<div class="header">
+		<!--logo-->
+		<div class="logo">
+			<img src="{% static "logo.png" %}">
+		</div>
+    </div>
+
+      <h1 style="text-align:center" font-family=" KaiTi">爱记账  爱生活</h1>
+<div style="width:100%;text-align:center">
+                <form action="/show/" method="post">
+                   <input type="submit" value="账单" class="btns"/>
+                </form>
+             <form action="/add/" method="post">
+                   <input type="submit" value="新建" class="btns" />
+                </form>
+             <form action="/plan/" method="post">
+                   <input type="submit" value="星愿计划" class="btns"/>
+             </form>
+
+    </div>
+
+
+</body>
+</html>
