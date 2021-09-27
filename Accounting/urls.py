@@ -21,6 +21,7 @@ from login import views
 
 
 urlpatterns = [
+    url(r'', views.index),
     url(r'index/', views.index),
     url(r"signup/", views.signup),
     url(r"show/", views.show),
@@ -34,7 +35,6 @@ urlpatterns = [
     url("AddExpend/", TemplateView.as_view(template_name="AddExpend.html")),
    url("AddIncome/", TemplateView.as_view(template_name="AddIncome.html")),
     url(r"sendemail/",views.sendEmail),
-
     url(r'api/user$',views.api_userinfo),
 
 ]
