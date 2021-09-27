@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>新建账单</title>
+
+</head>
+<style type="text/css">
+    body{
+                 /*设置背景*/
+                {% load static %}
+                background-image: url("{% static "bj.jpg" %}");
+                background-size: 100% 100%;
+                height:100%;
+                margin:100px;
+               padding:100px;
+            }
+
+#menu {
+font-size: 12px;
+font-weight: bolder;
+}
+#menu li{
+list-style-image: none;
+list-style-type: none;
+background-color: #999999;
+border-right-width: 1px;
+border-right-style: solid;
+border-right-color: #000000;
+float: left;
+}
+#menu li a{
+color: #FFFFFF;
+text-decoration: none;
+margin: 0px;
+padding-top: 8px;
+display: block; /* 作为一个块 */
+padding-right: 50px; /* 设置块的属性 */
+padding-bottom: 8px;
+padding-left: 50px;
+}
+#menu li a:hover{
+background-color: #0099CC;
+}
+
+</style>
+
+<body>
+<div class="header">
+		<!--logo-->
+		<div class="logo">
+			<img src="{% static "logo.png" %}">
+		</div>
+    </div>
+
+     <div id="navfirst" >
+         <ul id="menu">
+             <li id="h">
+                 <a href="/AddExpend/" title="支出">支出</a>
+             </li>
+             <li id="s">
+                 <a href="/AddIncome/" title="收入">收入</a>
+             </li>
+         </ul>
+     </div>
+
+<div style="width:100%;text-align:center">
+<form action="/SaveExpend/" method="post">
+     <br /><br />金额<input type="text" name="price" /><br /><br />
+     备注<input type="text" name="remarks" /><br /><br />
+	<img src="{% static "dining.png" %}" width="25px" height="25px">Dining: <input type="radio" name="radio" checked="true"  value="Dining" />
+	<img src="{% static "shopping.png" %}" width="25px" height="25px">Shopping: <input type="radio" name="radio" value=Shopping" />
+	<img src="{% static "housing.png" %}" width="25px" height="25px">Housing: <input type="radio" name="radio" value= "Housing" />
+    <img src="{% static "tansporting.png" %}" width="25px" height="25px">Transporting: <input type="radio" name="radio"value= "Transporting" /><br /><br />
+   <img src="{% static "communicating.png" %}" width="25px" height="25px">Communicating: <input type="radio" name="radio" value="Communicating" />
+    <img src="{% static "Entertainmenting.png" %}" width="25px" height="25px">Entertainmenting: <input type="radio" name="radio" value="Entertainmenting" />
+    <img src="{% static "Medical.png" %}" width="25px" height="25px">Medical: <input type="radio" name="radio"  value="Medical" />
+	<img src="{% static "Education.png" %}" width="25px" height="25px">Education: <input type="radio" name="radio" value="Education" /><br /><br />
+	<img src="{% static "RedPaper.png" %}" width="25px" height="25px">RedPaper: <input type="radio" name="radio" value= "RedPaper" />
+    <img src="{% static "Investent.png" %}" width="25px" height="25px">Investent: <input type="radio" name="radio"value= "Investent" />
+   <img src="{% static "loan.png" %}" width="25px" height="25px">loan: <input type="radio" name="radio" value="loan" />
+    <img src="{% static "PayDebt.png" %}" width="25px" height="25px">PayDebt: <input type="radio" name="radio" value="PayDebt" /><br /><br />
+    <img src="{% static "Others.png" %}" width="25px" height="25px">Others: <input type="radio" name="radio" value="Others" />
+  <!-- <input type="datetime-local" value="2020.6.23 14.26"/><br/>-->
+     <button type="submit">保存</button>
+</form>
+    </div>
+</body>
+</html>

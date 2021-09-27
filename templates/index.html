@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head> <meta charset="UTF-8">
+    <title>首页</title>
+    </head>
+      <style type="text/css">
+            body{
+                 /*设置背景*/
+                {% load static %}
+                background-image: url("{% static "bj.jpg" %}");
+                background-size: 100% 100%;
+                height:100%;
+                margin:100px;
+               padding:100px;
+            }
+
+
+            </style>
+        <body>
+                 <!--头部-->
+	<div class="header">
+		<!--logo-->
+		<div class="logo">
+			<img src="{% static "logo.png" %}">
+		</div>
+    </div>
+  
+      <h1 style="text-align:center" font-family=" KaiTi">爱记账  爱生活</h1>
+      <div style="width:100%;text-align:center">
+              <form action="/index/" method="post">
+                     {% csrf_token %} <!--加入这行 -->
+                   <br> <td align="right"> 用户名：</td><input type="text" name="username"  /><br />
+                  <br> <td align="right">密码：</td><input type="password" name="password" /><br /><br/>
+                    <input type="submit" value="登录" />
+                   <input type="submit" name="register" value ="注册" />
+              </form>
+      </div>
+</body>
+</html>
